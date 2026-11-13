@@ -195,3 +195,136 @@ html.t5 .slide,html.t5 .slide.dark{--bg:#0e0e0e;--paper:#1a1a1a;--paper2:#242424
 html.t5 .slide.alt{--bg:#0e0e0e;--paper:#1a1a1a;--paper2:#242424;--soft:#2e2e2e;--line:#333333}
 html.t5 .slide.field{--bg:#ff8a1f;--paper:#ffa347;--paper2:#e87a14;--soft:#d96f10;--line:#cc6a10;--ink:#0e0e0e;--mute:#4a2a08;--acc:#0e0e0e;--accink:#ff8a1f;--dtx:#ff8a1f;--green:#0e0e0e;--blue:#0e0e0e}
 html.t5 .lg img{filter:invert(.93)}
+
+/* Wisdome 後端架構圖（inline SVG，顏色全用主題變數） */
+.arch{width:100%;height:auto;max-height:100%}
+.arch .panel{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.arch .host{fill:none;stroke:var(--acc);stroke-width:2.5;stroke-dasharray:3 7;stroke-linecap:round}
+.arch .nd rect{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.arch .nd.in rect{fill:var(--paper2);stroke:var(--soft)}
+.arch .nd.hot rect{fill:var(--acc);stroke:var(--acc)}
+.arch .nd.ext rect{fill:none;stroke-dasharray:6 6}
+.arch .t1,.arch .t2{text-anchor:middle;dominant-baseline:central}
+.arch .t1.l,.arch .t2.l{text-anchor:start}
+.arch .t1{font-size:21px;font-weight:700;fill:var(--ink)}
+.arch .t2{font-size:16px;fill:var(--mute)}
+.arch .nd.hot .t1{font-size:24px}
+.arch .nd.hot .t1,.arch .nd.hot .t2{fill:var(--accink)}
+.arch .nd rect.icn{fill:var(--ink);stroke:none}
+.arch .nd.hot rect.icn{fill:var(--accink);stroke:none}
+.arch .sy{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.arch .lb{font-size:19px;fill:var(--mute)}
+.arch .lb.sm{font-size:17px}
+.arch .gt{font-size:18px;font-weight:700;fill:var(--mute);letter-spacing:.06em}
+.arch .gt.sm{font-size:17px;fill:var(--acc)}
+.arch .ln{fill:none;stroke:var(--mute);stroke-width:3;stroke-linejoin:round}
+.arch .ln.main{stroke:var(--acc);stroke-width:3.5}
+.arch .ln.dash{stroke-dasharray:9 7}
+.arch .ah{fill:var(--mute)}.arch .ah.ac{fill:var(--acc)}
+
+/* 用量與稽核：平台畫面示意（mk- 前綴） */
+.mk{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;flex:1;min-height:0}
+.mk-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:var(--paper2);border-bottom:1px solid var(--line);font-size:20px}
+.mk-bar i{width:12px;height:12px;border-radius:50%;background:var(--soft);display:block}
+.mk-bar b{margin-left:10px;font-weight:700;color:var(--ink)}
+.mk-pill{margin-left:auto;font-size:18px;padding:3px 14px;border-radius:99px;background:var(--bg);border:1px solid var(--line);color:var(--mute)}
+.mk-tabs{display:flex;gap:26px;padding:12px 20px 0;border-bottom:1px solid var(--line);font-size:21px;color:var(--mute)}
+.mk-tabs span{padding-bottom:10px}
+.mk-tabs .on{color:var(--ink);font-weight:700;border-bottom:3px solid var(--acc)}
+.mk-tool{display:flex;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.mk-search{flex:1;padding:8px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--line);color:var(--mute);font-size:20px}
+.mk-btn{padding:8px 24px;border-radius:8px;background:var(--acc);color:var(--accink);font-weight:700;font-size:20px}
+.mk-t{width:100%;border-collapse:collapse;font-size:21px}
+.mk-t th{text-align:left;font-weight:500;color:var(--mute);font-size:18px;padding:12px 20px 8px}
+.mk-t td{padding:11px 20px;border-top:1px solid var(--line);color:var(--ink)}
+.mk-t td b{color:var(--ink)}
+.mk-t tfoot td{font-weight:700;background:var(--paper2)}
+.mk-t td em{display:block;height:10px;border-radius:5px;background:var(--acc)}
+.mk-tag{display:inline-block;padding:2px 14px;border-radius:99px;border:1px solid var(--line);font-size:18px;color:var(--mute)}
+.mk-tag.a{background:var(--acc);border-color:var(--acc);color:var(--accink);font-weight:700}
+.mk-t tr.df td{border-top:0;background:var(--bg);font-size:20px;color:var(--mute)}
+.mk-t tr.df s{color:var(--mute);opacity:.8}
+.mk-t tr.df b{color:var(--acc)}
+.mk-diff{font-size:17px;border:1px solid var(--line);border-radius:6px;padding:1px 10px}
+.mk-note{margin-top:auto;padding:10px 20px;font-size:17px;color:var(--mute);border-top:1px solid var(--line)}
+.arch .nd.key rect{stroke:var(--acc);stroke-width:3}
+
+/* 用量報表：總覽卡片、數字靠右等寬、占比長條 */
+.mk-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--line)}
+.mk-kpi div{padding:16px 20px;display:flex;flex-direction:column;gap:2px;border-right:1px solid var(--line)}
+.mk-kpi div:last-child{border-right:0}
+.mk-kpi span{font-size:18px;color:var(--mute)}
+.mk-kpi b{font-size:44px;line-height:1.1;font-weight:900;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+.mk-kpi b.a{color:var(--acc)}
+.mk-kpi small{font-size:16px;color:var(--mute)}
+.mk-t .n{text-align:right;font-variant-numeric:tabular-nums}
+.mk-t td.c{font-weight:700;color:var(--ink)}
+.mk-t td.p{width:190px;position:relative;white-space:nowrap}
+.mk-t td.p em{display:inline-block;height:12px;border-radius:6px;background:var(--acc);vertical-align:middle}
+.mk-t td.p i{font-style:normal;font-size:17px;color:var(--mute);margin-left:10px;font-variant-numeric:tabular-nums}
+.mk-t tbody tr:nth-child(even) td{background:rgba(127,127,127,.06)}
+.arch .nd rect.cl,.arch rect.cl{fill:var(--soft);stroke:none}.arch .nd rect.cl.a,.arch rect.cl.a{fill:var(--acc)}
+.arch rect.brb{fill:var(--soft)}.arch rect.bra{fill:var(--acc)}
+.arch .bt{fill:var(--ink)}.arch .bt.on{fill:var(--accink);font-weight:700}
+.arch text.bgn{font-size:64px;font-weight:900;fill:var(--ink);letter-spacing:-.02em}.arch text.bgn.a{fill:var(--acc)}
+.arch rect.badge{fill:var(--acc)}.arch text.badget{font-size:23px;font-weight:700;fill:var(--accink);text-anchor:middle;dominant-baseline:central}
+.arch text.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:21px;fill:var(--ink)}.arch tspan.mk1{fill:var(--acc);font-weight:700}
+
+/* 獲獎頁：圖卡（aw- 前綴） */
+.aw-card{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.aw-card img{width:100%;display:block;object-fit:cover;object-position:50% 40%}
+.aw-card figcaption{display:flex;align-items:center;gap:18px;padding:14px 22px}
+.aw-yr{font-size:22px;font-weight:700;color:var(--accink);background:var(--acc);padding:2px 14px;border-radius:99px}
+.aw-card figcaption p{font-size:28px;font-weight:700;line-height:1.3}
+.aw-card figcaption small{display:block;font-size:21px;color:var(--mute);margin-top:2px}
+
+.aw-sec{font-size:24px;font-weight:700;color:var(--acc);letter-spacing:.08em;display:flex;align-items:center;gap:14px}
+.aw-sec::after{content:"";flex:1;height:2px;background:var(--line)}
+.aw-job{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 22px;display:flex;align-items:baseline;gap:18px}
+.aw-job b{font-size:30px}.aw-job span{font-size:22px;color:var(--mute)}
+.aw-note{font-size:21px;color:var(--mute)}
+
+.aw-h{flex-direction:row;align-items:stretch}
+.aw-h img{flex:none;object-fit:cover}
+.aw-cap2{padding:14px 22px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.aw-cap2 p{font-size:26px;font-weight:700;line-height:1.3}
+.aw-cap2 b{color:var(--acc)}
+.aw-cap2 small{font-size:20px;color:var(--mute)}
+.aw-cap2 .aw-yr{align-self:flex-start;margin-bottom:4px}
+
+/* 獲獎與志工：依圖片比例排的圖牆（gl- 前綴） */
+.gl{margin:0;position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:var(--paper);min-width:0}
+.gl img{width:100%;height:100%;display:block;object-fit:cover}
+.gl figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:14px;padding:30px 18px 14px;background:linear-gradient(to top,rgba(8,10,14,.88),rgba(8,10,14,0))}
+.gl figcaption p{font-size:24px;font-weight:700;line-height:1.25;color:#fff}
+.gl figcaption small{display:block;font-size:18px;color:#d5dbe6;margin-top:2px}
+.gl-t{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 22px;display:flex;align-items:center;gap:18px;min-width:0}
+.gl-t p{font-size:28px;font-weight:700;line-height:1.3}
+.gl-t small{display:block;font-size:21px;color:var(--mute);margin-top:2px}
+
+/* 獲獎、論文與志工：依時間順序的拼貼（mz- 前綴） */
+.mz-row{display:flex;gap:16px;flex:none;min-height:0}
+.mz{margin:0;display:flex;flex-direction:column;min-width:0;min-height:0;gap:8px}
+.mz figcaption{display:flex;align-items:baseline;gap:12px;font-size:23px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-top:10px;border-top:3px solid var(--line);position:relative}
+.mz figcaption::before{content:"";position:absolute;top:-8px;left:0;width:13px;height:13px;border-radius:50%;background:var(--acc)}
+.mz figcaption span{color:var(--acc);font-size:26px;font-weight:900;margin-left:20px}
+.mz-i{flex:1;min-height:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--paper);display:flex}
+.mz-i>img{width:100%;height:100%;object-fit:cover;display:block}
+.mz-i em{position:absolute;right:0;bottom:0;font-style:normal;font-size:16px;color:#e8ecf3;background:rgba(8,10,14,.62);padding:3px 12px;border-top-left-radius:10px}
+.mz-col{gap:4px}
+.mz-col>img{width:60%;flex:none}
+.mz-s{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+.mz-s img{width:100%;height:50%;object-fit:cover;display:block;min-height:0}
+
+/* 封面：標籤牆＋一整塊藍天（姓名與頭像在同一片天空上，頭像左緣羽化融進去）（cv-／tg 前綴） */
+.cv-bg{position:absolute;inset:0;overflow:hidden;padding:18px 14px;display:flex;flex-direction:column;gap:6px;z-index:0}
+.cv-band{display:flex;flex-wrap:wrap;gap:6px;overflow:hidden;align-content:flex-start;flex:none}
+.cv-band .tg{flex:1 1 auto;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;padding:0 12px;border-radius:6px;background:var(--paper2);color:var(--ink);white-space:nowrap;opacity:.45;user-select:none}
+.cv-hero{display:flex;gap:6px;height:420px;flex:none}
+.cv-rt,.cv-lt{flex:1;height:420px;min-width:0}
+.cv-id{flex:none;display:flex;align-items:center;gap:0;height:420px;padding:0 56px 0 0;background:#33cbfa;border-radius:10px;overflow:hidden}
+.cv-id img{height:420px;width:420px;flex:none;image-rendering:pixelated;-webkit-mask-image:linear-gradient(to left,transparent 0,#000 22%);mask-image:linear-gradient(to left,transparent 0,#000 22%)}
+.cv-txt{display:flex;flex-direction:column;justify-content:center;text-align:left;color:#fff;margin-left:-8px}
+.cv-txt h1{font-size:150px;line-height:.95;letter-spacing:-.04em;font-weight:900;color:#fff;text-shadow:0 6px 0 #0a3d8f}
+.cv-en{font-size:42px;color:#0a2f6b;font-weight:700;margin-top:10px;line-height:1.1}
+.cv-ti{font-size:34px;line-height:1.2;margin-top:8px;color:#fff;font-weight:700;text-shadow:0 2px 0 #0a3d8f}
